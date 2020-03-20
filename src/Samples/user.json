@@ -1,0 +1,10 @@
+{
+  "nickname": "User",
+  "level": 7,
+  "expProgress": {
+    "current": 700,
+    "required": 1000
+  },
+  "avatar": "none",
+  "skillPoints": 17
+}
