@@ -1,0 +1,28 @@
+.auth-window .primary-panel {
+    width: 460px
+}
+.auth-window__head {
+    padding: 10px 110px 30px;
+    display: flex;
+}
+.auth-window__head h1 {
+    padding-lefT: 20px;
+    margin: 0;
+}
+.auth-window__msg {
+    margin: 20px 0 10px;
+}
+.auth-window__forgot-pass {
+    text-align: right;
+    height: 23px;
+    font-family: Verdana, serif;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: italic;
+    text-decoration: underline;
+    line-height: 1.25;
+    letter-spacing: normal;
+    color: #d0d0d0;
+    margin-bottom: 40px;
+}
