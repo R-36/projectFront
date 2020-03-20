@@ -28,12 +28,6 @@ export default function Login(props) {
                placeholder={'Пароль'}
         />
       </div>
-      <div>
-        <input type={'password'}
-               name={'password-repeat'}
-               placeholder={'Повторите пароль'}
-        />
-      </div>
       <div className={'auth-window__forgot-pass'}>Забыли пароль?</div>
       <div>
         <Button onClick={switchTab}>
