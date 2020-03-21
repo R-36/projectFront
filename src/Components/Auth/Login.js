@@ -18,7 +18,7 @@ export default class Login extends Component {
   }
 
   login = () => {
-    fetch(process.env.REACT_APP_BACKEND + '/login_user', {
+    fetch(process.env.REACT_APP_BACKEND + 'login_user', {
       method: 'post',
       body: JSON.stringify({
         email: this.email,
@@ -32,8 +32,10 @@ export default class Login extends Component {
         cookies.set('authenticated', 'true');
         cookies.set('user_email', this.email);
         document.location = '/';
-      } else {
+      } else if (data.status === 'Failed') {
         this.setState({errors: data.message } );
+      } else {
+        this.setState({errors: 'No connection to service'});
       }
     });
   };
@@ -72,6 +74,7 @@ export default class Login extends Component {
           />
         </div>
         <div className={'auth-window__forgot-pass'}>Забыли пароль?</div>
+        <div className={'errors'}>{errors}</div>
         <div>
           <Button onClick={switchTab}>
             Создайте аккаунт

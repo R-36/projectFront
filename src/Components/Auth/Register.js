@@ -21,7 +21,7 @@ export default class Register extends Component {
     if( !this.validate() ) {
       return;
     }
-    fetch(process.env.REACT_APP_BACKEND + '/create_user', {
+    fetch(process.env.REACT_APP_BACKEND + 'create_user', {
       method: 'post',
       body: JSON.stringify({
         nickname: this.nickname,
@@ -36,8 +36,10 @@ export default class Register extends Component {
         cookies.set('authenticated', 'true');
         cookies.set('user_email', this.email);
         document.location = '/';
-      } else {
+      } else if( data.status === 'Failed' ) {
         this.setState({errors: data.message } )
+      } else {
+        this.setState({errors: 'No connection to service'});
       }
     });
   };
@@ -93,6 +95,7 @@ export default class Register extends Component {
           />
         </div>
         <div className={'auth-window__forgot-pass'}>Забыли пароль?</div>
+        <div className={'errors'}>{errors}</div>
         <div className={'_register'}>
           <Button onClick={switchTab}>
             У меня уже есть аккаунт

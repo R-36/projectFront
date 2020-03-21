@@ -125,9 +125,9 @@ input:hover {
 .user-bar__level {
     position: absolute;
     left: 49px;
-    top: -1px;
+    top: -7px;
     background: white;
-    min-width: 30px;
+    min-width: 22px;
     border-radius: 20px;
     color: #fd932c;
     font-family: Verdana, sans-serif;
@@ -135,8 +135,9 @@ input:hover {
     font-weight: bold;
     font-stretch: normal;
     font-style: italic;
-    line-height: 1.2;
-
+    line-height: 30px;
+    min-height: 30px;
+    padding: 0 4px;
 }
 .user-bar__avatar {
     margin-top: 10px;
