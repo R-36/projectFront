@@ -14,7 +14,9 @@
 }
 .screen-header .primary-panel {
     height: 70px;
+
 }
+
 
 .screen-header__page-title {
     width: 100%;
@@ -115,4 +117,11 @@
 }
 .btn-shopping {
     position: relative;
+}
+.screen-header__page-title.primary-panel {
+    margin-right: 0;
+    margin-left: 0;
+}
+.screen-header__skill-points.primary-panel {
+    margin-right: 0;
 }
