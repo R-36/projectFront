@@ -10,6 +10,7 @@ export default class AuthWindow extends Component {
       tab: 'login',
     }
   }
+
   render() {
     const { tab } = this.state;
     return(
