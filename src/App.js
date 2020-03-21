@@ -9,13 +9,10 @@ import {
   Redirect
 } from "react-router-dom";
 import Cookies from 'universal-cookie';
-import UserBar from "./Components/Common/UserBar";
-import user from './Samples/user'
 
 const cookies = new Cookies();
 
 const isAuthenticated = () => {
-
   return !!cookies.get('authenticated');
 };
 
@@ -23,25 +20,19 @@ function App() {
   return (
     <Router>
       <div className="App">
-          <UserBar user={user}/>
+          {!isAuthenticated() ?
+            <Redirect to={'/'}/> : ''
+          }
           <Switch>
             <Route path="/dashboard">
-              {!isAuthenticated() ?
-                <Redirect to={'/'}/>
-                :
                 <div>Dashboard</div>
-              }
             </Route>
             <Route path="/skilltree">
-              {!isAuthenticated() ?
-                <Redirect to={'/'}/>
-                :
                 <div>SkillTree</div>
-              }
             </Route>
             <Route path="/">
-              {isAuthenticated() ?
-                <Redirect to={'/dashboard'}/> : <AuthWindow/>
+              {!isAuthenticated() ?
+                <AuthWindow/> : <Redirect to={'/dashboard'}/>
               }
             </Route>
           </Switch>
