@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="44" height="44" viewBox="0 0 44 44">
+  <defs>
+    <filter id="Ellipse_20" x="0" y="0" width="44" height="44" filterUnits="userSpaceOnUse">
+      <feOffset dx="3" dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.09"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Path_5" x="9.737" y="8.939" width="21.475" height="22.046" filterUnits="userSpaceOnUse">
+      <feOffset dx="1" dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur-2"/>
+      <feFlood flood-color="#1f525f" flood-opacity="0.8"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Path_6" x="7.737" y="6.938" width="21.475" height="22.046" filterUnits="userSpaceOnUse">
+      <feOffset dx="-1" dy="-1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur-3"/>
+      <feFlood flood-color="#cdf3ff"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="SP" transform="translate(-1467 -26)">
+    <circle id="Ellipse_21" data-name="Ellipse 21" cx="15" cy="15" r="15" transform="translate(1471 30)" fill="#93bfcc"/>
+    <g transform="matrix(1, 0, 0, 1, 1467, 26)" filter="url(#Ellipse_20)">
+      <circle id="Ellipse_20-2" data-name="Ellipse 20" cx="13" cy="13" r="13" transform="translate(6 6)" fill="#a8d3e0"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 1467, 26)" filter="url(#Path_5)">
+      <path id="Path_5-2" data-name="Path 5" d="M6705.965,1659.852s-13.594-4.788-13.472,0,13.3,3.322,13.472,9.273-13.472,0-13.472,0" transform="translate(-6679.76 -1645.79)" fill="none" stroke="#dbdbdb" stroke-width="2"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 1467, 26)" filter="url(#Path_6)">
+      <path id="Path_6-2" data-name="Path 6" d="M6705.965,1659.852s-13.594-4.788-13.472,0,13.3,3.322,13.472,9.273-13.472,0-13.472,0" transform="translate(-6679.76 -1645.79)" fill="none" stroke="#a8d3e0" stroke-width="2"/>
+    </g>
+  </g>
+</svg>
