@@ -14,7 +14,8 @@
   letter-spacing: normal;
   color: #ffffff;
   background-color: #071e3d;
-  height: 100vh;
+  height: calc(100vh - 20px);
+  padding: 10px;
 }
 
 @keyframes leftFadeIn {

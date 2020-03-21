@@ -1,5 +1,6 @@
 .auth-window .primary-panel {
-    width: 460px
+    width: 460px;
+    padding: 20px;
 }
 .auth-window__head {
     padding: 10px 110px 30px;

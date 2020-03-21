@@ -9,6 +9,7 @@ import {
   Redirect
 } from "react-router-dom";
 import Cookies from 'universal-cookie';
+import Dashboard from "./Components/dashboard/Dashboard";
 
 const cookies = new Cookies();
 
@@ -25,7 +26,7 @@ function App() {
           }
           <Switch>
             <Route path="/dashboard">
-                <div>Dashboard</div>
+                <Dashboard/>
             </Route>
             <Route path="/skilltree">
                 <div>SkillTree</div>

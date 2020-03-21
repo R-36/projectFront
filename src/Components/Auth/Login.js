@@ -1,4 +1,4 @@
-import svg from "../../images/icon.svg";
+import svg from "../../images/logo.svg";
 import Button from "../Common/Button";
 import PrimaryPanel from "../Common/PrimaryPanel";
 import React, {Component} from "react";
