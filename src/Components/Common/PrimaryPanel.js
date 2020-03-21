@@ -2,9 +2,9 @@ import React, {Component} from "react";
 
 export default class PrimaryPanel extends Component {
   render() {
-    const { children, loading } = this.props;
+    const { children, loading, ...rest } = this.props;
     return(
-      <div className={'primary-panel' + (loading ? ' loading' : '')}>
+      <div {...rest} className={'primary-panel' + (loading ? ' loading' : '')}>
         {children}
       </div>
     );

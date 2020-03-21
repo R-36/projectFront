@@ -8,7 +8,7 @@ export default function UserBar(props) {
   if( !user.experience_next ) {
     percentage = 0;
   } else {
-    percentage = user.experience_act/user.experience_next * 100;
+    percentage = user.experience_act / user.experience_next * 100;
   }
 
   let avatar = placeholder;

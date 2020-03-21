@@ -14,7 +14,7 @@
   letter-spacing: normal;
   color: #ffffff;
   background-color: #071e3d;
-  height: calc(100vh - 20px);
+  min-height: calc(100vh - 20px);
   padding: 10px;
 }
 
