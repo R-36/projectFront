@@ -10,12 +10,16 @@ import {
 } from "react-router-dom";
 import Cookies from 'universal-cookie';
 import Dashboard from "./Components/dashboard/Dashboard";
+import SocketIO from "./Controllers/SocketIO";
 
 const cookies = new Cookies();
 
 const isAuthenticated = () => {
   return !!cookies.get('authenticated');
 };
+
+SocketIO.init();
+
 
 function App() {
   return (

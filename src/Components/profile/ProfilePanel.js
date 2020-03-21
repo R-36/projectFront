@@ -31,7 +31,8 @@ export default class ProfilePanel extends Component {
       if( data.user ) {
         this.setState({
           user: data.user,
-        })
+        });
+        cookies.set('nickname', data.user.username);
       }
     });
 

@@ -27,15 +27,15 @@ const modules = [
     description: 'Нужен совет от профессионалов в области? Специалисты предложат вам готовые комбинации курсов.',
     background: backgroundLeftBottom,
     backgroundPosition: '-373px 0px',
-    gradient: 'linear-gradient(49deg, #7045af 35%, rgba(56, 35, 88, 0) 153%);'
+    gradient: 'linear-gradient(49deg, #7045af 35%, rgba(56, 35, 88, 0) 153%)'
   }
 ];
 export default function Navigation() {
   return(
     <div className={'navigation'}>
       <div className={'navigation__inner'}>
-        {modules.map( (module) =>
-          <div style={{
+        {modules.map( (module, key) =>
+          <div key={key} style={{
             backgroundImage: module.background ? 'url("' + module.background + '")' : '',
             backgroundPosition: module.backgroundPosition ? module.backgroundPosition : '',
           }} className={'navigation__item'}>
