@@ -5,7 +5,12 @@ export default function UserSkills(props) {
   const { skills = [] } = props;
   return(
     <div>
-      {Object.entries(skills).map( ( [index, skill] ) => <UserSkillBar key={index} skill={skill}/>)}
+      {Object.entries(skills).map( ( [index, skill] ) =>
+          <UserSkillBar key={index}
+                        skill={{type: index, ...skill}}
+          />
+        )
+      }
     </div>
   );
 }
