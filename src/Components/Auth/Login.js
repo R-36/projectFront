@@ -9,15 +9,23 @@ const cookies = new Cookies();
 
 export default class Login extends Component {
 
+  email = '';
+  password = '';
+
   constructor(props) {
     super(props);
     this.state = {
       authenticated: false,
-      errors: false,
+      errors: [],
+      requesting: false
     }
   }
 
   login = () => {
+    if( !this.validate() ) {
+      return;
+    }
+    this.setState({requesting: true});
     fetch(process.env.REACT_APP_BACKEND + 'login_user', {
       method: 'post',
       body: JSON.stringify({
@@ -26,32 +34,45 @@ export default class Login extends Component {
       })
     }).then((response) => {
       return response.json();
-    }).then((data) => {
+    }).then( (data) => {
       console.log(data);
+      this.setState({requesting: false});
       if( data.status === 'Success' ) {
         cookies.set('authenticated', 'true');
         cookies.set('user_email', this.email);
         document.location = '/';
       } else if (data.status === 'Failed') {
-        this.setState({errors: data.message } );
+        this.setState({errors: [data.message] } );
       } else {
-        this.setState({errors: 'No connection to service'});
+        this.setState({errors: ['No connection to service']});
       }
     });
   };
 
+  validate = () => {
+    let errors = [];
+    if( !this.email ) {
+      errors.push('Пожалуйста, введите E-email.');
+    }
+    if( !this.password ) {
+      errors.push('Пожалуйста, введите пароль.');
+    }
+
+    this.setState({errors: errors});
+    return !errors.length;
+  };
+
   render() {
     const { switchTab } = this.props;
-    const { authenticated, errors } = this.state;
+    const { authenticated, errors, requesting } = this.state;
 
     if( authenticated ) {
-      console.log('redir');
       return(
         <Redirect to={'/dashboard'}/>
       );
     }
     return (
-      <PrimaryPanel>
+      <PrimaryPanel loading={requesting}>
         <div className={'auth-window__head'}>
           <img src={svg} alt={'logo'}/>
           <h1>SkillPlay</h1>
@@ -74,7 +95,9 @@ export default class Login extends Component {
           />
         </div>
         <div className={'auth-window__forgot-pass'}>Забыли пароль?</div>
-        <div className={'errors'}>{errors}</div>
+        <div className={'errors'}>{
+          errors.map( (error, index) => <div key={index}>{error}</div> )
+        }</div>
         <div>
           <Button onClick={switchTab}>
             Создайте аккаунт

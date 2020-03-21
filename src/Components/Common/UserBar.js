@@ -4,7 +4,7 @@ import ProgressBar from "./ProgressBar";
 
 export default function UserBar(props) {
   const { user } = props;
-  const percentage = user.expProgress.current/user.expProgress.required;
+  const percentage = user.expProgress.current/user.expProgress.required * 100;
   return(
     <div className={'user-bar'}>
       <div className={'user-bar__avatar'}>

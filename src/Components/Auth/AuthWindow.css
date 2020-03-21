@@ -26,3 +26,9 @@
     color: #d0d0d0;
     margin-bottom: 40px;
 }
+
+.errors {
+    margin: 10px 0;
+    color: #ff7b7b;
+    font-size: 14px;
+}

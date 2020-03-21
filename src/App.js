@@ -9,6 +9,8 @@ import {
   Redirect
 } from "react-router-dom";
 import Cookies from 'universal-cookie';
+import UserBar from "./Components/Common/UserBar";
+import user from './Samples/user'
 
 const cookies = new Cookies();
 
@@ -21,6 +23,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+          <UserBar user={user}/>
           <Switch>
             <Route path="/dashboard">
               {!isAuthenticated() ?
