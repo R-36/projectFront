@@ -1,0 +1,118 @@
+.dashboard {
+    display: flex;
+}
+.dashboard .primary-panel {
+    margin: 10px;
+}
+
+.main-screen {
+    width: 100%;
+}
+
+.screen-header {
+    display: flex;
+}
+.screen-header .primary-panel {
+    height: 70px;
+}
+
+.screen-header__page-title {
+    width: 100%;
+}
+.screen-header__skill-points {
+    min-width: 369px;
+    display: flex;
+    line-height: 70px;
+ }
+.screen-header__skill-points .btn {
+    width: 170px;
+    margin-top: 10px;
+    margin-right: 12px;
+}
+.screen-header__menu {
+    min-width: 70px;
+}
+.screen-header__name {
+    padding-left: 122px;
+    font-size: 25px;
+    line-height: 70px;
+    text-align: left;
+}
+.skill-points-gold {
+    width: 85px;
+    display: flex;
+}
+.skill-points {
+    width: 100px;
+    padding-left: 5px;
+    display: flex;
+}
+.skill-points img,
+.skill-points-gold img {
+    padding-top: 6px;
+}
+.skill-points-gold {
+    padding-left: 14px;
+}
+.navigation {
+
+
+}
+.navigation__item {
+    margin: 26px;
+    width: 558px;
+    height: 274px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 0 rgba(0, 16, 95, 0.46);
+    background-color: #7045af;
+    position: relative;
+}
+.navigation__item-inner {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(118deg, #7045af 35%, rgba(56, 35, 88, 0) 153%);
+    border-radius: 15px;
+}
+
+.navigation__inner {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1220px;
+    margin: 30px auto auto;
+    border-radius: 15px;
+}
+.navigation__item-title {
+    font-size: 25px;
+    text-align: left;
+    padding: 20px;
+}
+.navigation__item-description {
+    padding: 10px 20px;
+    text-align: left;
+    font-size: 15px;
+    line-height: 1.6;
+
+}
+.navigation-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+.btn-settings {
+    width: 50px;
+    margin-top: 9px;
+}
+
+.btn-shopping img {
+    position: absolute;
+    right: 23px;
+    top: 17px;
+}
+.btn-shopping span {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+}
+.btn-shopping {
+    position: relative;
+}

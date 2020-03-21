@@ -91,10 +91,10 @@ input:hover {
     background-color: #27a2bd;
 }
 .btn-active {
-    background-color: #21e6c1;
+    background-color: var(--tealish);
 }
 .btn-active:hover {
-    background-color: #36ffd9;
+    background-color: #21e6c1;
 }
 
 .progress-bar {
@@ -194,7 +194,7 @@ input:hover {
 }
 
 .profile-panel {
-    width: 500px;
+    width: 520px;
 }
 
 .logo-header {

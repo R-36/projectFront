@@ -76,7 +76,7 @@ export default class ProfilePanel extends Component {
             <h1>SkillPlay</h1>
           </div>
         </PrimaryPanel>
-        <PrimaryPanel style={{paddingBottom: '10px'}}>
+        <PrimaryPanel style={{padding: '10px 0'}}>
           <UserBar user={user}/>
           <MyStats stats={userStats}/>
           <UserSkills skills={userSkills}/>
