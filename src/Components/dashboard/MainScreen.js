@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import ScreenHeader from "./ScreenHeader";
 import Navigation from "./Navigation";
 import TriviaGame from "./Trivia/TriviaGame";
+import SkillTree from "./SkillTree/SkillTree";
 
 
 export default class MainScreen extends Component {
@@ -14,14 +15,17 @@ export default class MainScreen extends Component {
   }
 
   render() {
-    const {page} = this.state;
+    const {page, props} = this.state;
     return(
       <div className={'main-screen'}>
         <ScreenHeader back={page !== 'navigation'}
                       page={page}
                       goBack={ () => this.setState({page: 'navigation'})}
         />
-        {page === 'navigation' ?  <Navigation/> : <TriviaGame/>}
+        {}
+        {page === 'navigation' ?  <Navigation switchPage={(page, props) => this.setState({page, props}) }/> : ''}
+        {page === 'trivia' ? <TriviaGame {...props}/> : ''}
+        {page === 'skilltree' ? <SkillTree/> : ''}
       </div>
     )
   }

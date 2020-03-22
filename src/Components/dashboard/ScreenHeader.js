@@ -8,7 +8,8 @@ import shoppingCart from '../../images/shopping.svg';
 
 const pageMap = {
   'trivia': 'Викторина',
-  'navigation': 'Главная страница'
+  'navigation': 'Главная страница',
+  'skilltree': 'Дерево умений',
 };
 
 export default function ScreenHeader({back, page, goBack}) {

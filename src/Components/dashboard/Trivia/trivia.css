@@ -95,6 +95,7 @@
 .trivia__players {
     display: flex;
     margin: 35px 70px 0;
+    margin-right: 0;
     padding: 0 20px;
 }
 .trivia__opponents {
@@ -141,4 +142,17 @@
     position: absolute;
     right: 34px;
     top: 171px;
+}
+
+.player-status--wait {
+     background-image: linear-gradient(to bottom, var(--textfield), #071635);
+}
+.player-status--answer {
+    background-image: linear-gradient(to bottom, #58dfe4, #49cde2 22%, #56f1fc 40%, #2cbdd4 53%, #0885a5);
+}
+.player-status--correct {
+    background-image: linear-gradient(to bottom, #58e461, #49e254 22%, #56fc61 40%, #2cd438 53%, #08a513);
+}
+.player-status--wrong {
+    background-image: linear-gradient(to bottom, #e45858, #e24949 22%, #fc5656 40%, #d42c2c 53%, #a50808);
 }

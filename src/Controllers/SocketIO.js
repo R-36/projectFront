@@ -9,6 +9,10 @@ class SocketIO {
         this.socket.on('connect', () => {
             console.log('Connected to server');
         });
+
+        this.socket.on('trivia_update', (data) => {
+          console.log(data);
+        } );
     }
 
     getClientID() {

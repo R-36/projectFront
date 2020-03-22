@@ -9,6 +9,11 @@
     border-bottom-right-radius: 0;
     background-color: #2b3595;
     right: 74px;
+    transition: height 0.5s;
+}
+
+.chat--minimized {
+    height: 62px;
 }
 
 .chat__rooms {
@@ -66,4 +71,16 @@
 }
 .chat__input {
     display: flex;
+}
+
+.chat-minimize {
+    position: absolute;
+    top: 15px;
+    right: 17px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.reversed {
+    transform: rotate(180deg);
 }

@@ -3,6 +3,7 @@ import SocketIO from "../../Controllers/SocketIO";
 import Button from "../Common/Button";
 import './chat.css';
 import Cookies from "universal-cookie";
+import arrowDown from "../../images/arrow_down.svg";
 
 class Chat extends Component {
 
@@ -12,7 +13,7 @@ class Chat extends Component {
         this.state = {
             messages: [],
             focused: true,
-            minimized: false,
+            minimized: true,
             unreads: false,
         };
 
@@ -55,10 +56,16 @@ class Chat extends Component {
         const {messages, minimized, unreads} = this.state;
         if( minimized ) {
             return (
-                <div className={'chat--minimized' + (unreads ? ' chat--blinking' : '')}
-                     onClick={ () => this.setState({minimized: false})}
+                <div className={'chat chat--minimized'}
                 >
-                    Chat
+                  <div className={'chat__rooms'}>
+                    <div className={'chat__room'}>Общий чат</div>
+                  </div>
+                  <img className={'chat-minimize reversed'}
+                       src={arrowDown}
+                       alt={'shevron'}
+                       onClick={() => this.setState({minimized: false})}
+                  />
                 </div>
             );
         }
@@ -66,6 +73,11 @@ class Chat extends Component {
           <div className={'chat'}>
             <div className={'chat__rooms'}>
                 <div className={'chat__room'}>Общий чат</div>
+              <img className={'chat-minimize'}
+                   src={arrowDown}
+                   alt={'shevron'}
+                   onClick={() => this.setState({minimized: true})}
+              />
             </div>
             <div id={'js-chat-messages'}
                  className={'chat__messages'}
