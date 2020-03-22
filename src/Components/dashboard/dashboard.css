@@ -125,3 +125,7 @@
 .screen-header__skill-points.primary-panel {
     margin-right: 0;
 }
+
+.navigation {
+    position: relative;
+}

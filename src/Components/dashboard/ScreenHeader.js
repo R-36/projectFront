@@ -6,14 +6,24 @@ import spGold from '../../images/SPGOLD.svg';
 import arrowDown from '../../images/arrow_down.svg';
 import shoppingCart from '../../images/shopping.svg';
 
-export default function ScreenHeader() {
+const pageMap = {
+  'trivia': 'Викторина',
+  'navigation': 'Главная страница'
+};
+
+export default function ScreenHeader({back, page, goBack}) {
   return(
     <div className={'screen-header'}>
       <PrimaryPanel className={'screen-header__page-title'}>
-        <div className={'screen-header__name'}>
-          Главный экран
-        </div>
+        {back &&
+          <Button className={'btn-go-back'} onClick={ () => goBack() }>
+            Назад
+          </Button>
+        }
 
+        <div className={'screen-header__name'}>
+          {pageMap[page]}
+        </div>
       </PrimaryPanel>
       <PrimaryPanel className={'screen-header__skill-points'}>
         <div className={'skill-points'}>
