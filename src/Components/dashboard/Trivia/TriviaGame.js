@@ -12,12 +12,10 @@ export default class TriviaGame extends Component {
     super(props);
     this.state = {
       question: '',
-      answers: [
-        'Чайковский', 'Чайковский', 'Чайковский', 'Чайковский'
-      ],
       opponents: [],
       time: 15,
-      game: props.initialGame ? props.initialGame : {}
+      game: props.initialGame ? props.initialGame : {},
+      selectedAnswer: null,
     }
   }
 
@@ -56,8 +54,8 @@ export default class TriviaGame extends Component {
   }
 
   render() {
-    const {time, game } = this.state;
-    const { question = {}, game_status, players = [], answers = []} = game;
+    const {time, game, selectedAnswer } = this.state;
+    const { question = {}, game_status, players = []} = game;
 
     const parsedPlayers = this.parsePlayers(players);
     return(
@@ -71,8 +69,15 @@ export default class TriviaGame extends Component {
         {question.answers &&
           <div className={'trivia__answers'}>
             {question.answers.map( (answer, id) =>
-              <Button className={'answer'}
-                      onClick={() => Trivia.answer(id)}
+              <Button className={'answer' + (id === selectedAnswer ? ' selected' : '')}
+                      onClick={() => {
+                        if( selectedAnswer ) {
+                          return;
+                        }
+                        Trivia.answer(id);
+                       this.setState({selectedAnswer: id});
+                      }}
+                      key={id}
               >
                 {answer}
               </Button>

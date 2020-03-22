@@ -1,4 +1,4 @@
-import React, {Component, useState} from "react";
+import React, {Component} from "react";
 import Button from "../Common/Button";
 import backgroundLeftTop from '../../images/skilltree1.png';
 import backgroundRightTop from '../../images/skilltree2.png';
@@ -72,6 +72,15 @@ export default class Navigation extends Component {
         background: backgroundLeftBottom,
         backgroundPosition: '-373px 0px',
         gradient: 'linear-gradient(49deg, #7045af 35%, rgba(56, 35, 88, 0) 153%)'
+      },
+      {
+        name: 'single-course',
+        label: 'Пример курса',
+        description: 'Пример курса.',
+        background: backgroundRightBottom,
+        backgroundPosition: '-315px 0px',
+        gradient: 'linear-gradient(315deg, #7045af 35%, rgba(56, 35, 88, 0) 153%)',
+        onClick: () => switchPage('singleCourse')
       }
     ];
 

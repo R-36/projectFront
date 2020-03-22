@@ -3,6 +3,7 @@ import ScreenHeader from "./ScreenHeader";
 import Navigation from "./Navigation";
 import TriviaGame from "./Trivia/TriviaGame";
 import SkillTree from "./SkillTree/SkillTree";
+import SingleCourse from "./course/SingleCourse";
 
 
 export default class MainScreen extends Component {
@@ -26,6 +27,7 @@ export default class MainScreen extends Component {
         {page === 'navigation' ?  <Navigation switchPage={(page, props) => this.setState({page, props}) }/> : ''}
         {page === 'trivia' ? <TriviaGame {...props}/> : ''}
         {page === 'skilltree' ? <SkillTree/> : ''}
+        {page === 'singleCourse' ? <SingleCourse/> : ''}
       </div>
     )
   }

@@ -103,6 +103,7 @@ class Chat extends Component {
                                e.target.value = '';
                            }
                         } }
+                        autoComplete={'off'}
                     />
                     <Button className={'chat__btn'} onClick={()=> this.send()}>Отправить</Button>
                 </div>

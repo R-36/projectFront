@@ -156,3 +156,10 @@
 .player-status--wrong {
     background-image: linear-gradient(to bottom, #e45858, #e24949 22%, #fc5656 40%, #d42c2c 53%, #a50808);
 }
+
+.selected {
+    background-color: #34e9f6;
+}
+.selected:hover {
+    background-color: #34e9f6;
+}
