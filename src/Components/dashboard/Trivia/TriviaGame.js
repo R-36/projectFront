@@ -38,16 +38,13 @@ export default class TriviaGame extends Component {
   }
 
   listenServer = (data) => {
-    console.log(data);
     this.setState({game: data});
   };
 
   parsePlayers(players) {
     const current = cookies.get('nickname');
     let parsed = { current: false, opponents: []};
-    console.log(current);
     for( let [index, player] of Object.entries(players) ) {
-      console.log(player);
       if( !parsed.current && player.nickname === current ) {
         parsed.current = player;
       } else {
@@ -63,7 +60,6 @@ export default class TriviaGame extends Component {
     const { question = {}, game_status, players = [], answers = []} = game;
 
     const parsedPlayers = this.parsePlayers(players);
-console.log(parsedPlayers);
     return(
       <div className={'trivia'}>
         <div className={'trivia__time'}>
@@ -90,8 +86,8 @@ console.log(parsedPlayers);
             <TriviaPlayerCard player={parsedPlayers.current}/>
           </div>
           <div className={'trivia__opponents'}>
-            {parsedPlayers.opponents.map( (player) =>
-              <TriviaPlayerCard player={player}/>
+            {parsedPlayers.opponents.map( (player, index) =>
+              <TriviaPlayerCard key={index} player={player}/>
             )}
           </div>
         </div>

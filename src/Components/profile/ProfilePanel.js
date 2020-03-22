@@ -6,6 +6,7 @@ import MyStats from "./MyStats";
 import './profile.css';
 import Cookies from "universal-cookie";
 import UserSkills from "./UserSkills";
+import Button from "../Common/Button";
 
 export default class ProfilePanel extends Component {
 
@@ -82,6 +83,18 @@ export default class ProfilePanel extends Component {
           <MyStats stats={userStats}/>
           <UserSkills skills={userSkills}/>
         </PrimaryPanel>
+        <div>
+          <Button onClick={() => alert('Резюме создано. На самом деле нет, но скоро появится и эта возможность.')}
+                  style={{width:'242px'}}
+          >
+            Создать резюме
+          </Button>
+          <Button onClick={() => alert('Курс создан. На самом деле нет, но скоро появится и эта возможность.')}
+                  style={{width:'242px'}}
+          >
+            Создать курс
+          </Button>
+        </div>
       </div>
     );
   }
