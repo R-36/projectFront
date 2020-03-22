@@ -20,6 +20,15 @@ export default class ProfilePanel extends Component {
 
 
   componentDidMount() {
+    this.update();
+    this.ticker = setInterval( this.update, 5000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.ticker);
+  }
+
+  update = () => {
     const cookies = new Cookies();
     fetch(process.env.REACT_APP_BACKEND + 'get_user', {
       method: 'post',
@@ -66,7 +75,7 @@ export default class ProfilePanel extends Component {
         })
       }
     });
-  }
+  };
 
   render() {
     const { user, userStats, userSkills } = this.state;
